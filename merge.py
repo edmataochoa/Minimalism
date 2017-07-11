@@ -1,8 +1,9 @@
-class Word(object):
+class Word:
     """docstring for ."""
-    def __init__(self, arg):
-        super(, self).__init__()
-        self.arg = arg
+    def __init__(self, lexical_item):
+        #super(, self).__init__()
+        self.name = name
+        self.category = "TBD"
 
 lexicon = {
 "house" :   ["N", "sg"],
@@ -21,18 +22,21 @@ def merge(a, *args):
         return a
 
 def get_category(word):
-    pos = lexicon.get(word)[0]
-    result = "This word is a "
+    try:
+        pos = lexicon.get(word)[0]
+    except:
+        return "The Lexicon has not yet learned " + word.upper()
+    result = "Grammatical category for " + word.upper() + ": "
     if pos == "V":
         return result + "verb"
     elif pos == "N":
         return result + "noun"
     elif pos == "ADJ":
         return result + "adjective"
-    else:
-        return "This word belongs to an unrecognized grammatical category"
 
+print(merge("house"))
 
-#print(merge("house", "to be", "red"))
-
-print(get_category("to be"))
+# print(get_category("to be"))
+# print(get_category("house"))
+# print(get_category("red"))
+# print(get_category("blue"))
