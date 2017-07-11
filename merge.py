@@ -1,7 +1,7 @@
 class Word:
-    """docstring for ."""
+    """docstring for Word."""
     def __init__(self, lexical_item):
-        #super(, self).__init__()
+        super(Word, self).__init__()
         self.name = name
         self.category = "TBD"
 
@@ -34,7 +34,7 @@ def get_category(word):
     elif pos == "ADJ":
         return result + "adjective"
 
-print(merge("house"))
+print(merge("house", "hey"))
 
 # print(get_category("to be"))
 # print(get_category("house"))
